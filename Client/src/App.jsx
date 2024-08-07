@@ -9,7 +9,7 @@ function App() {
 
   const handleDone = (id) => {
     axios
-      .put(`http://localhost:3001/todos/${id}`, { done: true })
+      .put(`https://to-do-list-api-delta.vercel.app/todos/${id}`, { done: true })
       .then((result) => console.log(result))
       .catch((err) => {
         console.log(err);
@@ -18,7 +18,7 @@ function App() {
 
   const handleNotDone = (id) => {
     axios
-      .put(`http://localhost:3001/todos/${id}`, { done: false })
+      .put(`https://to-do-list-api-delta.vercel.app/todos/${id}`, { done: false })
       .then((result) => console.log(result))
       .catch((err) => {
         console.log(err);
@@ -27,7 +27,7 @@ function App() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:3001/delete/${id}`)
+      .delete(`https://to-do-list-api-delta.vercel.app/delete/${id}`)
       .then((result) => console.log(result))
       .catch((err) => {
         console.log(err);
@@ -36,7 +36,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/get")
+      .get("https://to-do-list-api-delta.vercel.app/get")
       .then((result) => setTodos(result.data))
       .catch((err) => console.log(err));
   }, [todos]);
