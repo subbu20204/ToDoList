@@ -8,9 +8,10 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: "https://to-do-list-frontend-one.vercel.app",
-  credentials: true,
-  optionsSuccessStatus: 200,
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  maxAge: 3600,
 }));
 app.use(express.json());
 
