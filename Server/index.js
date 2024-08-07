@@ -6,13 +6,11 @@ const dotenv = require("dotenv");
 dotenv.config(); 
 
 const app = express();
-app.use(cors(
-  {
-      origin: ["https://to-do-list-frontend-one.vercel.app"],
-      methods: ["POST", "GET","PUT","DELETE"],
-      credentials: true
-  }
-));
+app.use(cors({
+  origin: 'https://to-do-list-frontend-one.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  headers: ['Content-Type', 'Accept', 'Accept-Language', 'Accept-Encoding']
+}));
 app.use(express.json());
 
 mongoose
