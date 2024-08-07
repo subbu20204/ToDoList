@@ -5,7 +5,7 @@ function Create() {
   const [Task, setTask] = React.useState("");
   const handleAdd = () => {
     axios
-      .post("http://localhost:3001/add", { task: Task })
+      .post("https://to-do-list-api-delta.vercel.app/add", { task: Task })
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
   };
