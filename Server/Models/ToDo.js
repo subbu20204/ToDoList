@@ -8,5 +8,5 @@ const TodoSchema = new mongoose.Schema({
   },
 });
 
-const TodoModel = mongoose.model("Todo", TodoSchema);
+const TodoModel = mongoose.model("todos", TodoSchema);
 module.exports = TodoModel;
