@@ -1,19 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const TodoModel = require('./Models/ToDo')
+const dotenv = require("dotenv"); 
+const TodoModel = require("./Models/ToDo");
+
+dotenv.config(); 
 
 const app = express();
-app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  maxAge: 3600,
-}));
+app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect(mongodb+srv://subbu20204:F1GiFjggv7WjKyTD@cluster0.fghaj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0) 
+  .connect(process.env.MONGODB_URI) 
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
