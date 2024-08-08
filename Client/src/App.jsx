@@ -5,7 +5,6 @@ import axios from "axios";
 
 function App() {
   const [todos, setTodos] = useState([]);
-  axios.defaults.withCredentials = true;
 
   const handleDone = (id) => {
     axios
